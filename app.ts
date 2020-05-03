@@ -1,5 +1,4 @@
-declare function require(s: string);
-const _ = require('lodash');
+import _ from 'lodash';
 
 const users = [
   { 'user': 'barney',  'active': false },
@@ -7,6 +6,12 @@ const users = [
   { 'user': 'pebbles', 'active': true }
 ];
 
-const result = _.findIndex(users, o => o.user == 'fred');
-
+const result = _.findIndex(users, (o: any) => o.user == 'fred');
 console.log(result);
+
+let arr = _.fill(Array(3), 2);
+
+console.log(arr);
+
+arr = _.initial(arr);
+console.log(arr);
